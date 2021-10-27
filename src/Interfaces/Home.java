@@ -59,7 +59,7 @@ import net.sf.jasperreports.engine.JasperPrintManager;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
-
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -6601,7 +6601,7 @@ public class Home extends javax.swing.JFrame {
 
             PaymentFinish();
 
-        } catch (NumberFormatException | SQLException e) {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e, "Shop Management System", JOptionPane.WARNING_MESSAGE);
         }
 

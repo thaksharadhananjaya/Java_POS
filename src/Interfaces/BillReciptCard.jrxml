@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="226" pageHeight="841" columnWidth="201" leftMargin="17" rightMargin="8" topMargin="5" bottomMargin="14" isFloatColumnFooter="true" isIgnorePagination="true" uuid="779f8f65-6ed5-4eee-a2a4-59023f81e8eb">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="276"/>
+	<parameter name="BillID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     billitem.`Bill ID`,
+     FORMAT(billitem.`Selling Price (Rs.)`,2) AS 'Selling Price (Rs.)',
+     FORMAT(billitem.`Total (Rs.)`,2) AS 'Total (Rs.)',
+     billitem.`Item Name`,
+     billitem.`Quantity`,
+     DATE_FORMAT(`Date & Time`,'%Y-%m-%d   %h:%i %p') AS 'Date & Time',
+     FORMAT(bill.`Net Total (Rs.)`,2) AS 'BillNetTotal',
+     bill.`User Name`
+FROM
+     `billitem`,
+     `bill` WHERE `bill`.`Bill ID` LIKE $P{BillID} AND `billitem`.`Bill ID` = $P{BillID}]]>
+	</queryString>
+	<field name="Bill ID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Selling Price (Rs.)" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Total (Rs.)" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Item Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Quantity" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Date &amp; Time" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BillNetTotal" class="java.lang.String"/>
+	<field name="User Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="198" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="160" width="198" height="14" uuid="1528561e-32f3-4ed0-8b79-a4291482aa6d"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Date & Time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="172" width="138" height="14" uuid="8983bf41-87e6-44eb-b9cc-e95be4822170"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Bill ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="184" width="138" height="14" uuid="5b12b5ef-66ef-4fee-bf9a-3cb311ca3b76"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{User Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="172" width="42" height="14" uuid="63252367-f42d-44a8-a530-156ad13ff62b"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Bill ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="184" width="42" height="14" uuid="91224310-511c-4431-81d9-8065e9ede2d0"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Cashier:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="157" width="198" height="1" uuid="a52c6321-b9ba-428a-90be-97aec3dd422c"/>
+			</line>
+			<image scaleImage="RetainShape">
+				<reportElement x="50" y="0" width="100" height="80" uuid="451683f1-9434-4592-ae71-eb5c6514ffe8"/>
+				<imageExpression><![CDATA["C:\\Program Files\\Aanya Fashion Store\\Images\\Aanya_Logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="80" width="198" height="14" uuid="71a1ed81-1da5-4920-b8b5-81946398b522"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[150C Main Street]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="94" width="198" height="14" uuid="1bbc64fb-605e-4112-a5ae-ab9b4d8bba84"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Battaramulla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="108" width="198" height="14" uuid="dc7617d4-81ca-4fd5-9279-aadc1de0c01e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[www.aanya.lk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="122" width="198" height="14" uuid="d9df8587-bcb9-4c43-b622-54e41c2b4e74"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[+94 719517428]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="136" width="198" height="14" uuid="cf62bc69-62eb-4d85-9e53-18d4012cf8b3"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[aanyasrilanka@gmail.com]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="51" height="15" uuid="7a217f97-383e-4b78-bdcf-dc6f4c7d081a"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="15" width="25" height="15" uuid="09e062cf-ec82-44c8-aff4-7e430b3ff6b1"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="15" width="34" height="15" uuid="d1596616-af7e-4580-a709-7aa3336366d4"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="132" y="15" width="62" height="15" uuid="d2618150-951d-4487-a3ea-a96c81b2b950"/>
+				<textElement textAlignment="Right">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Net Amount]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="198" height="1" uuid="075764f2-8cbb-4cb8-ae40-c3ee38466e67"/>
+			</line>
+			<line>
+				<reportElement x="0" y="30" width="198" height="1" uuid="abc76671-5caf-4e8a-9fa0-c814bd3b5b83"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="198" height="12" uuid="95a42679-7078-458c-b9cd-a58406f941f0"/>
+				<textElement>
+					<font fontName="Book Antiqua" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Item Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="13" y="12" width="19" height="12" uuid="a8b29fc8-a5c5-4300-90ad-ef49e31c9a89"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Book Antiqua" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Quantity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="32" y="12" width="10" height="12" uuid="32eaa935-8497-4854-b088-38a71667244a"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Book Antiqua" size="9"/>
+				</textElement>
+				<text><![CDATA[*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="51" y="12" width="49" height="12" uuid="746d3976-d158-4812-8ad6-9734b65e69a3"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Book Antiqua" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Selling Price (Rs.)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="12" width="62" height="12" uuid="b598bd00-59db-4fb0-a0c5-16eda1163cac"/>
+				<textElement textAlignment="Right">
+					<font fontName="Book Antiqua" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total (Rs.)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="149" splitType="Stretch">
+			<textField>
+				<reportElement x="144" y="10" width="50" height="15" uuid="a1f97441-ccf8-43cc-b12c-a2e3ec8f5b74"/>
+				<textElement textAlignment="Right">
+					<font fontName="Book Antiqua" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BillNetTotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="118" height="15" uuid="a30b014e-9e89-477a-92bb-29db0c3bd9bf"/>
+				<textElement>
+					<font fontName="Book Antiqua" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="25" width="62" height="15" uuid="3e27262f-e883-48c9-94ac-58ab00e7f6e7"/>
+				<textElement>
+					<font fontName="Book Antiqua" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment by]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="198" height="1" uuid="4704307b-b792-4c8c-91b6-0fb229b5b016"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="50" width="198" height="13" uuid="efb1c162-1114-419c-8864-6aa46a4a6983"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[**************************************************]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="92" width="198" height="14" uuid="1dd9a28f-da31-4444-8cc6-d76e7e3881d8"/>
+				<text><![CDATA[***************************************************]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="63" width="198" height="14" uuid="0fb05137-10e0-4a3f-8e2d-6d7cf9cd77bf"/>
+				<textElement textAlignment="Center">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Hope you enjoy your purchase]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="78" width="198" height="14" uuid="21815cbc-1f9c-47c0-b414-d3e5cbebfb74"/>
+				<textElement textAlignment="Center">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Thank you!]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="125" width="198" height="15" uuid="d2b0a6b0-4c1d-4062-9fd5-037bb8e4a747"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<text><![CDATA[SYSTEM  BY  THAKSHARA (077 659 1828)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="25" width="132" height="15" uuid="64b0db2a-1ccf-48ea-8fbc-6875873471fb"/>
+				<textElement textAlignment="Right">
+					<font fontName="Book Antiqua" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Card/ Cash On Delivery]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="10" width="17" height="15" uuid="6c30649f-2f94-4db2-a60e-8ca463057dd1"/>
+				<textElement textAlignment="Right">
+					<font fontName="Book Antiqua" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rs.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="106" width="198" height="15" uuid="e590c52a-ddc7-4735-b6ba-deebe818b249"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Return accept 7 days only]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

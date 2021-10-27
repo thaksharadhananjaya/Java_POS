@@ -17,7 +17,7 @@ public class DBconnect {
         try {
 
             Class.forName("com.mysql.jdbc.Connection");
-            conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/koratuwa", "root", "afs@sms");
+            conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/aanya_fashion", "root", "afs@sms");
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Can't access database !", "Shop Management System", JOptionPane.WARNING_MESSAGE);
